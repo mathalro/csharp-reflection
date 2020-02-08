@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsharpReflection.Infrastructure;
+using System;
 
 namespace CsharpReflection
 {
@@ -6,7 +7,14 @@ namespace CsharpReflection
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var prefixes = new string[]
+            {
+                "http://localhost:5341/"
+            };
+
+            var webApplication = new WebApplication(prefixes);
+
+            webApplication.Init();
         }
     }
 }
