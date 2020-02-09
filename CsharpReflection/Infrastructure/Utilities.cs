@@ -1,7 +1,18 @@
-﻿namespace CsharpReflection.Infrastructure
+﻿using System;
+using System.Linq;
+
+namespace CsharpReflection.Infrastructure
 {
     public static class Utilities
     {
+        public static bool IsFile(string path)
+        {
+            var pieces = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            var lastPiece = pieces.Last();
+
+            return lastPiece.Contains('.');
+        }
+
         public static string ConvertPathToAssemblyName(string path)
         {
             var dotPaht = path.Replace('/', '.');

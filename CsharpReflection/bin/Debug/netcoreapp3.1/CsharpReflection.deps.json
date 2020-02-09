@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "CsharpReflection/1.0.0": {
+        "dependencies": {
+          "CsharpReflection.Services": "1.0.0"
+        },
         "runtime": {
           "CsharpReflection.dll": {}
+        }
+      },
+      "CsharpReflection.Services/1.0.0": {
+        "runtime": {
+          "CsharpReflection.Services.dll": {}
         }
       }
     }
   },
   "libraries": {
     "CsharpReflection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CsharpReflection.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -9,3 +9,6 @@ C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\obj\Debug\netcorea
 C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\obj\Debug\netcoreapp3.1\CsharpReflection.AssemblyInfo.cs
 C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\obj\Debug\netcoreapp3.1\CsharpReflection.dll
 C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\obj\Debug\netcoreapp3.1\CsharpReflection.pdb
+C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\bin\Debug\netcoreapp3.1\CsharpReflection.Services.dll
+C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\bin\Debug\netcoreapp3.1\CsharpReflection.Services.pdb
+C:\Users\mathe\source\repos\CsharpReflection\CsharpReflection\obj\Debug\netcoreapp3.1\CsharpReflection.csproj.CopyComplete

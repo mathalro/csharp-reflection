@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -23,6 +23,10 @@
     <EmbeddedResource Include="View\Cartoes\Credito.html" />
     <EmbeddedResource Include="View\Cartoes\Debito.html" />
     <EmbeddedResource Include="View\Home\Index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CsharpReflection.Services\CsharpReflection.Services.csproj" />
   </ItemGroup>
 
 </Project>
