@@ -33,5 +33,21 @@ namespace CsharpReflection.Controllers
 
             return resultText;
         }
+
+        public string Calc(string originCurrency, string targetCurrency, double value)
+        {
+            var finalValue = _exchangeService.GetCurrentExchange(originCurrency, targetCurrency, value);
+
+            var content = View();
+            var resultText = content
+                .Replace("{{valueOrigin}}", finalValue.ToString())
+                .Replace("{{origin}}", originCurrency)
+                .Replace("{{target}}", targetCurrency)
+                .Replace("{{valueTarget}}", value.ToString());
+
+            return resultText;
+        }
+
+        public string Calc(string originCurrency, double value) => Calc("BRL", originCurrency, value);
     }
 }
