@@ -1,4 +1,5 @@
 ﻿using CsharpReflection.Infrastructure;
+using CsharpReflection.Models;
 using CsharpReflection.Services;
 using System.IO;
 using System.Reflection;
@@ -38,14 +39,15 @@ namespace CsharpReflection.Controllers
         {
             var finalValue = _exchangeService.GetCurrentExchange(originCurrency, targetCurrency, value);
 
-            var content = View();
-            var resultText = content
-                .Replace("{{valueOrigin}}", finalValue.ToString())
-                .Replace("{{origin}}", originCurrency)
-                .Replace("{{target}}", targetCurrency)
-                .Replace("{{valueTarget}}", value.ToString());
+            var calcModel = new CalcModel
+            {
+                OriginCurrency = originCurrency,
+                OriginValue = value.ToString(),
+                TargetCurrency = targetCurrency,
+                TargetValue = finalValue.ToString()
+            };
 
-            return resultText;
+            return View(calcModel);
         }
 
         public string Calc(string originCurrency, double value) => Calc("BRL", originCurrency, value);

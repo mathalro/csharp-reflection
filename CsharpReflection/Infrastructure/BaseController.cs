@@ -1,6 +1,9 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace CsharpReflection.Infrastructure
 {
@@ -20,6 +23,25 @@ namespace CsharpReflection.Infrastructure
             var content = streamReader.ReadToEnd();
 
             return content;
+        }
+
+        protected string View(object model, [CallerMemberName] string fileName = null)
+        {
+            var normalView = View(fileName);
+            var allProperties = model.GetType().GetProperties();
+
+            var regex = new Regex("\\{{(.*?)\\}}");
+
+            var processedView = regex.Replace(normalView, (match) => 
+            {
+                var propertie = match.Groups[1].Value;
+
+                var prop = allProperties.Single(prop => prop.Name.Equals(propertie));
+
+                return prop.GetValue(model)?.ToString();
+            });
+
+            return processedView;
         }
     }
 }
